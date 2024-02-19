@@ -253,6 +253,22 @@ int tpc2alterByKey(int tpc, Key key)
 }
 
 //---------------------------------------------------------
+//   tpc2alterByKeyMode
+//
+// returns the alteration -3 to 3 of a given tpc in the given key/mode
+// TODO(EJS) 1) In src/engraving/dom/note.cpp see See line 987 if you can update the calling signature to use 
+//              the KeySig object rather than the Key object? or add the mode? 
+//           2) Figure out how to do this calculation using the mode and key
+//
+//
+//---------------------------------------------------------
+
+int tpc2alterByKeyMode(int tpc, Key key, )
+{
+    return (tpc - int(key) - int(Tpc::TPC_MIN) + int(Key::MAX)) / TPC_DELTA_SEMITONE - (int(AccidentalVal::MAX) + 1);
+}
+
+//---------------------------------------------------------
 //   tpc2name
 //    return note name
 //---------------------------------------------------------
